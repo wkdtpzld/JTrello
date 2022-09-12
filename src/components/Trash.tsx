@@ -7,7 +7,7 @@ const Trash = () => {
         <Droppable droppableId='trash'>
             {(magic) => (
                 <TrashBox ref={magic.innerRef} {...magic.droppableProps} >
-                    <FaTrash size="40" />
+                    <FaTrash size="50" />
                 </TrashBox>
             )}
         </Droppable>
@@ -20,7 +20,7 @@ const TrashBox = styled.div`
     position: fixed;
     right: 0;
     bottom: 0;
-    padding: 30px;
+    padding: 50px;
     z-index: 10000000;
 
     svg {

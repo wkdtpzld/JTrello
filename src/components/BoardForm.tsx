@@ -35,7 +35,7 @@ const BoardForm = () => {
         <FormWrapper>
             <Form onSubmit={handleSubmit(onValid)}>
                 <Label htmlFor='board'> Create New Board </Label>
-                <Input {...register("board", {required: true})} placeholder={`Add task on`} />
+                <Input {...register("board", {required: true})} placeholder={`Add a new board`} autoComplete="off" />
             </Form>
         </FormWrapper>
     )

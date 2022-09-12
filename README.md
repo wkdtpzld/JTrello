@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# JTrello
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Drag And Drop을 통한 애자일 보드를 구현
 
-## Available Scripts
+https://wkdtpzld.github.io/JTrello
 
-In the project directory, you can run:
+-------
 
-### `npm start`
+## Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[screen-recording (2).webm](https://user-images.githubusercontent.com/87063105/189778471-94954ec7-616e-4df9-aecc-dc9852bf6426.webm)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+------
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  .
+<img src="https://img.shields.io/badge/Typescript-192a56?style=flat-square&logo=typescript&logoColor=white"/> 
+<img src="https://img.shields.io/badge/React-487eb0?style=flat-square&logo=react&logoColor=white"> 
+<img src="https://img.shields.io/badge/styledComponents-DB7093?style=flat-square&logo=styledComponents&logoColor=white"> 
+<img src="https://img.shields.io/badge/reactQuery-FF4154?style=flat-square&logo=reactquery&logoColor=white"> 
+<img src="https://img.shields.io/badge/recoil-40AEF0?style=flat-square&logo=recoil&logoColor=white">
+<img src="https://img.shields.io/badge/reactHookForm-EC5990?style=flat-square&logo=reactHookForm&logoColor=white"> 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React-Beautiful-dnd 를 통한 Drag and Drop을 구현해보았습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 중요하게 봤던 점.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### React-Beautiful-dnd
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+역시 가장 중요한건 React-Beautiful-dnd 였습니다. 해당 웹 서비스에서 가장 중요한 역할이었기 떄문에 고민을 가장 많이 하였습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![image](https://user-images.githubusercontent.com/87063105/189781221-b1dbb2f6-77bc-4d61-8a30-1410b0aea6d9.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+생각보다 사용법이 쉬운것 같으면서도 어려웠습니다.
 
-## Learn More
+예를 들어서 현재 Board[...ToDos] 가 입력되어있고 ToDo => TrashCan으로 보낼수는 있지만
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+고의적으로 **Board는 TrashCan에 보내는것을 막아두었습니다.**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+이러한 작업을 통해서 react-beautiful-dnd 에 대한 이해도를 상승시켰습니다.
+
+
+
+### Recoil
+
+Redux를 사용하여 Flux 아키텍쳐를 사용해 왔지만 Reocoil에 대한 정보를 얻을 수 있었고 Flux 방식보다 훨씬 편안하게 사용할 수 있어서 좋았습니다.
+
+![image](https://user-images.githubusercontent.com/87063105/189780966-e416c2b0-5437-4e27-948b-93438c1aea1a.png)
+
+또한 recoilPersist를 사용하여 로컬스토리지에 저장하는 방식에 대하여 알게되었습니다.
+
+해당 함수를 사용함으로서 직접 localstorage에 입력하는 번거러움이 없어졌으며 코드 또한 보기쉽게 이해가 되었습니다.
+
+### JS
+
+기본적인 이야기겠지만 자료구조 알고리즘을 공부했음에 불구하고
+React의 랜더링 방식인 Mutate를 사용하지 않고 새로운 데이터를 구성해 내보내야 함에 많은 고민을 하였습니다.
+
+![image](https://user-images.githubusercontent.com/87063105/189780924-6f426a57-bbfd-4dab-a7cb-79bbc2d83ab0.png)
+
+### Reack-hook-form
+
+Hooks를 사용하여 Form형식에 대한 validation 코드 단축을 하게 되었습니다.
+
+![image](https://user-images.githubusercontent.com/87063105/189781782-a5e868af-5e1e-48cf-948c-78d079233d90.png)
+
+![image](https://user-images.githubusercontent.com/87063105/189781925-78379750-140e-4c35-8bc6-83b1d63f6c84.png)
+
+해당 Hook을 사용함으로서 입력값에 대한 state 관리코드가 매우 적어졌으며 코드의 가독성 또한 좋아졌습니다.

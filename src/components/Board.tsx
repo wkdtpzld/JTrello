@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import DragabbleCard from './DragabbleCard';
 import { useForm } from "react-hook-form";
 import { BoardState, IToDo, toDoState } from '../atoms';
-import { useSetRecoilState, useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
 interface IBoardProps {
     toDos: IToDo[],
@@ -67,10 +67,11 @@ const Board = ({toDos, boardId, index}:IBoardProps) => {
                         <DeleteBtn onClick={onDeleteBtn}>Delete</DeleteBtn>
                     </Title>
                     <Form onSubmit={handleSubmit(onValid)}>
-                        <input
+                        <Input
                             {...register("toDo", {required: true})}
                             type="text"
                             placeholder={`Add task on ${boardId}`}
+                            autoComplete="off"
                         />
                     </Form>
                     <Droppable droppableId={boardId}>
@@ -130,15 +131,9 @@ const Title = styled.div`
     padding: 0px 20px;
 `;
 
-const Form = styled.form`
-    input {
-        width: 100%;
-    }
-`
-
 const DeleteBtn = styled.button`
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 15px;
     padding: 5px 10px;
     background-color: #f5f6fa;
@@ -148,5 +143,25 @@ const DeleteBtn = styled.button`
     &:hover {
         background-color: black;
         color: white;
+    }
+`;
+
+const Form = styled.form`
+
+    display: flex;
+    justify-content: center;
+
+`
+
+const Input = styled.input`
+    padding: 20px;
+    width: 80%;
+    border-radius: 5px;
+    transition: 0.5s;
+    border: 3px solid #faf7f7;
+    outline: none;
+
+    &:focus {
+        border: 3px solid black
     }
 `;
